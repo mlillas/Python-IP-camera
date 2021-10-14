@@ -140,7 +140,12 @@ def rename():
 
 def ftpUpload():
     #session = ftplib.FTP(FTP_url+FTP_port, FTP_username, FTP_passwd)
-    session = ftplib.FTP("www.kolumbus.fi:21","vr4091857","volvo2bm")
+    session = ftplib.FTP("www.kolumbus.fi")
+
+    try:
+        session.login(user=FTP_username, passwd=FTP_passwd)
+    except:
+        print('Login Failed!')
 
     try:
         session.cwd('cam')
@@ -161,3 +166,5 @@ def ftpUpload():
         print("No files found!!!")
 
     session.quit()
+
+ftpUpload()
