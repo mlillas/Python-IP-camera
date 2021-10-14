@@ -140,7 +140,7 @@ def rename():
 
 def ftpUpload():
     #session = ftplib.FTP(FTP_url+FTP_port, FTP_username, FTP_passwd)
-    session = ftplib.FTP("www.kolumbus.fi")
+    session = ftplib.FTP(FTP_url)
 
     try:
         session.login(user=FTP_username, passwd=FTP_passwd)
