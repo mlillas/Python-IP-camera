@@ -166,5 +166,4 @@ def ftpUpload():
         print("No files found!!!")
 
     session.quit()
-
-ftpUpload()
+    print('Upload Finished Successfully!')
