@@ -1,11 +1,12 @@
 import cv2
 from apscheduler.schedulers.blocking import BlockingScheduler
 from config import interval
+import time
 
 
 def capture():
     print("Capturing")
-    cap = cv2.VideoCapture('rtsp://admin:admin123@192.168.1.150:88/videoMain')
+    cap = cv2.VideoCapture('rtsp://admin:admin123@192.168.1.150:88/videoMain') # <-- EDIT HERE
 
     if cap.isOpened():
         ret,frame = cap.read()
